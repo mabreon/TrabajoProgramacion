@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Statement;
 
-public class Conecxion {
+public class Conexion {
 
 	public static Connection conexion() throws SQLException {
 		

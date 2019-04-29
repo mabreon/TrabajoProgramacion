@@ -27,8 +27,8 @@ public class Login extends JFrame {
 	private static final long serialVersionUID = -2310846797885094754L;
 	private JPanel contentPane;
 	private int o;
-	private JTextField textField;
-	private JPasswordField passwordField;
+	private JTextField textUser;
+	private JPasswordField textPassword;
 
 	/**
 	 * Launch the application.
@@ -74,20 +74,25 @@ public class Login extends JFrame {
 		JButton btnNewButton_1 = new JButton("Ingresar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorLogin.buttonLogin();
+				String Usuario = textUser.getText();
+				String Password = textPassword.getText();
+				if(controladorLogin.buttonLogin(Usuario, Password)) {
+					setVisible(false);
+				}
+				
 			}
 		});
 		btnNewButton_1.setBounds(325, 102, 89, 23);
 		panel.add(btnNewButton_1);
 		
-		textField = new JTextField();
-		textField.setBounds(158, 25, 100, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		textUser = new JTextField();
+		textUser.setBounds(158, 25, 100, 20);
+		panel.add(textUser);
+		textUser.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(158, 54, 100, 20);
-		panel.add(passwordField);
+		textPassword = new JPasswordField();
+		textPassword.setBounds(158, 54, 100, 20);
+		panel.add(textPassword);
 		
 		JLabel lblNewLabel = new JLabel("Usuario");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
