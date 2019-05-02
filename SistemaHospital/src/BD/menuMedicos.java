@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class menuMedicos extends JFrame {
 
@@ -40,6 +42,7 @@ public class menuMedicos extends JFrame {
 	 * Create the frame.
 	 */
 	public menuMedicos() {
+		setTitle("Menu Medicos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 154);
 		contentPane = new JPanel();
@@ -56,7 +59,7 @@ public class menuMedicos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(164, 21, 89, 23);
+		btnNewButton.setBounds(157, 41, 89, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("A\u00F1adir");
@@ -64,12 +67,23 @@ public class menuMedicos extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_1.setBounds(0, 21, 89, 23);
+		btnNewButton_1.setBounds(0, 41, 89, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
-		btnNewButton_2.setBounds(325, 21, 89, 23);
+		btnNewButton_2.setBounds(325, 41, 89, 23);
 		panel.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("<");
+		btnNewButton_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Menu.main(null);
+				setVisible(false);
+			}
+		});
+		btnNewButton_3.setBounds(0, 0, 41, 19);
+		panel.add(btnNewButton_3);
 		
 		
 		
