@@ -19,8 +19,7 @@ import java.awt.event.MouseEvent;
 public class menuMedicos extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
-	private JTable table_1;
+	
 
 	/**
 	 * Launch the application.
@@ -87,12 +86,6 @@ public class menuMedicos extends JFrame {
 		
 		
 		
-		String[] titulos = {"id", "nombre", "apellido", "especialidad"};
-		String data[][] = {{"Vinod","MCA","Computer"},
-				{"Deepak","PGDCA","History"},
-				{"Ranjan","M.SC.","Biology"},
-				{"Radha","BCA","Computer"}};
-		TableModel model = new DefaultTableModel (data, titulos);
-
+		
 	}
 }

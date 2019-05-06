@@ -11,10 +11,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTable;
 
 public class menuPacientes extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -41,7 +43,7 @@ public class menuPacientes extends JFrame {
 		});
 		setTitle("Menu Pacientes");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 154);
+		setBounds(100, 100, 450, 239);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -51,11 +53,20 @@ public class menuPacientes extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
+		table = new JTable();
+		table.setBounds(10, 74, 393, 105);
+		panel.add(table);
+		
 		JButton btnNewButton = new JButton("A\u00F1adir");
 		btnNewButton.setBounds(10, 40, 89, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Listar");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+			}
+		});
 		btnNewButton_1.setBounds(164, 40, 89, 23);
 		panel.add(btnNewButton_1);
 		
