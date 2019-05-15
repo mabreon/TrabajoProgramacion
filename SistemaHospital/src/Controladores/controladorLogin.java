@@ -14,25 +14,13 @@ public class controladorLogin {
 	public static boolean buttonLogin(String Usuario, String Password) {
 		
 		try {
-			String consulta = "select * from usuarios";
+			String consulta = "select * from usuarios where Usuario='"+Usuario+"' AND Password='"+Password+"'";
 			PreparedStatement consultaprep = (PreparedStatement) Conexion.conexion().prepareStatement(consulta);
 
 			ResultSet rs=consultaprep.executeQuery();
 			if(rs.next()) {
-				
-				if(Usuario.equals(rs.getString("Usuario"))) {
-					if(Password.equals(rs.getString("Password"))) {
-						Menu.main(null);
-						return true;
-						
-					}else {
-						JOptionPane.showMessageDialog(null, "contraseña erronea");
-					}
-					
-				}else {
-					JOptionPane.showMessageDialog(null, "usuario incorrecto");
-				}
-				
+				Menu.main(null);
+				return true;
 			}else {
 				JOptionPane.showMessageDialog(null, "usuario incorrecto");
 			}

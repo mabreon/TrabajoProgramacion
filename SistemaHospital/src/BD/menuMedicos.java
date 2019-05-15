@@ -43,7 +43,7 @@ public class menuMedicos extends JFrame {
 	public menuMedicos() {
 		setTitle("Menu Medicos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 154);
+		setBounds(100, 100, 315, 175);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -58,7 +58,7 @@ public class menuMedicos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(157, 41, 89, 23);
+		btnNewButton.setBounds(10, 88, 89, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("A\u00F1adir");
@@ -66,14 +66,18 @@ public class menuMedicos extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_1.setBounds(0, 41, 89, 23);
+		btnNewButton_1.setBounds(10, 45, 89, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
-		btnNewButton_2.setBounds(325, 41, 89, 23);
+		btnNewButton_2.setBounds(173, 88, 89, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("<");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -81,8 +85,12 @@ public class menuMedicos extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnNewButton_3.setBounds(0, 0, 41, 19);
+		btnNewButton_3.setBounds(10, 11, 41, 23);
 		panel.add(btnNewButton_3);
+		
+		JButton btnModificar = new JButton("Modificar");
+		btnModificar.setBounds(173, 45, 89, 23);
+		panel.add(btnModificar);
 		
 		
 		

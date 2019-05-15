@@ -16,7 +16,6 @@ import javax.swing.JTable;
 public class menuPacientes extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -43,7 +42,7 @@ public class menuPacientes extends JFrame {
 		});
 		setTitle("Menu Pacientes");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 239);
+		setBounds(100, 100, 315, 175);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -53,25 +52,22 @@ public class menuPacientes extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		table = new JTable();
-		table.setBounds(10, 74, 393, 105);
-		panel.add(table);
-		
 		JButton btnNewButton = new JButton("A\u00F1adir");
-		btnNewButton.setBounds(10, 40, 89, 23);
+		btnNewButton.setBounds(10, 45, 89, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Listar");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			public void mouseClicked(MouseEvent e) {
+				listarPacientes.main(null);
+				setVisible(false);
 			}
 		});
-		btnNewButton_1.setBounds(164, 40, 89, 23);
+		btnNewButton_1.setBounds(10, 88, 89, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
-		btnNewButton_2.setBounds(314, 40, 89, 23);
+		btnNewButton_2.setBounds(173, 88, 89, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("<");
@@ -88,5 +84,9 @@ public class menuPacientes extends JFrame {
 		});
 		btnNewButton_3.setBounds(10, 11, 41, 23);
 		panel.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Modificar");
+		btnNewButton_4.setBounds(173, 45, 89, 23);
+		panel.add(btnNewButton_4);
 	}
 }
