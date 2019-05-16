@@ -53,6 +53,12 @@ public class menuPacientes extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("A\u00F1adir");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				añadirPaciente.main(null);
+				setVisible(false);
+			}
+		});
 		btnNewButton.setBounds(10, 45, 89, 23);
 		panel.add(btnNewButton);
 		

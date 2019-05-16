@@ -17,6 +17,7 @@ public class controladorLogin {
 			String consulta = "select * from usuarios where Usuario='"+Usuario+"' AND Password='"+Password+"'";
 			PreparedStatement consultaprep = (PreparedStatement) Conexion.conexion().prepareStatement(consulta);
 
+			
 			ResultSet rs=consultaprep.executeQuery();
 			if(rs.next()) {
 				Menu.main(null);
@@ -30,5 +31,6 @@ public class controladorLogin {
 			e.printStackTrace();
 		}
 		return false;
+		
 	}
 }

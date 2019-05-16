@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Controladores.Conexion;
 import Controladores.controladorLogin;
 
 import javax.swing.JButton;
@@ -48,8 +49,10 @@ public class Login extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws SQLException 
 	 */
-	public Login() {
+	public Login() throws SQLException {
+		Conexion.conexion();
 		setTitle("Ingreso");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 185);

@@ -2,10 +2,18 @@ package BD;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import com.mysql.jdbc.PreparedStatement;
+
+import Controladores.Conexion;
+
 import javax.swing.JTable;
 
 public class listarPacientes extends JFrame {
@@ -45,8 +53,33 @@ public class listarPacientes extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		table = new JTable();
+		JTable table = new JTable();
+		table.setEnabled(false);
+		table.setAutoCreateRowSorter(true);
 		table.setBounds(-5, 253, 429, -255);
 		panel.add(table);
+		
+		Object[][] datos = new Object[0][0];
+		String[] titulo = {"Nombre", "Apellido", "Enfermedad", "fNacimiento"};	
+		DefaultTableModel Pacientes = new DefaultTableModel(datos,titulo);
+		
+		table.setModel(Pacientes);
+		String consulta = "SELECT Nombre, Apellido, Enfermedad, fNacimiento FROM `pacientes`";
+		try {
+			ResultSet rs= ((Controladores.Conexion) Conexion).ejecutarSentencia(consulta);
+			while(rs.next()) {
+			String Paciente1
+			}
+			PreparedStatement sentencia = (PreparedStatement) Conexion.conexion().prepareStatement(consulta);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	private ResultSet Conexion.ejecutar(String consulta) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
