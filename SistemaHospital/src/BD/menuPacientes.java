@@ -11,10 +11,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTable;
 
 public class menuPacientes extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -42,7 +45,7 @@ public class menuPacientes extends JFrame {
 		});
 		setTitle("Menu Pacientes");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 315, 175);
+		setBounds(100, 100, 390, 175);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -59,21 +62,21 @@ public class menuPacientes extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(10, 45, 89, 23);
+		btnNewButton.setBounds(265, 88, 89, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Listar");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				listarPacientes.main(null);
-				setVisible(false);
+			
+				
 			}
 		});
 		btnNewButton_1.setBounds(10, 88, 89, 23);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
-		btnNewButton_2.setBounds(173, 88, 89, 23);
+		btnNewButton_2.setBounds(135, 88, 89, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("<");
@@ -90,9 +93,5 @@ public class menuPacientes extends JFrame {
 		});
 		btnNewButton_3.setBounds(10, 11, 41, 23);
 		panel.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("Modificar");
-		btnNewButton_4.setBounds(173, 45, 89, 23);
-		panel.add(btnNewButton_4);
 	}
 }

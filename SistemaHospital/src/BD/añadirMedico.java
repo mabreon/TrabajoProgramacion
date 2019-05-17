@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class añadirPaciente extends JFrame {
+public class añadirMedico extends JFrame {
 
 	/**
 	 * 
@@ -26,7 +26,7 @@ public class añadirPaciente extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField Nombre;
-	private JTextField Enfermedad;
+	private JTextField Especialidad;
 	private JTextField Fnacimiento;
 	private JTextField Apellido;
 	private JTextField id;
@@ -38,7 +38,7 @@ public class añadirPaciente extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					añadirPaciente frame = new añadirPaciente();
+					añadirMedico frame = new añadirMedico();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,9 +51,9 @@ public class añadirPaciente extends JFrame {
 	 * Create the frame.
 	 * @throws SQLException 
 	 */
-	public añadirPaciente() throws SQLException {
+	public añadirMedico() throws SQLException {
 		Conexion.conexion();
-		setTitle("A\u00F1adir Paciente");
+		setTitle("A\u00F1adir Medico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -78,7 +78,7 @@ public class añadirPaciente extends JFrame {
 		lblNewLabel_1.setBounds(121, 48, 46, 14);
 		panel.add(lblNewLabel_1);
 
-		JLabel lblNewLabel_2 = new JLabel("Enfermedad");
+		JLabel lblNewLabel_2 = new JLabel("Especialidad");
 		lblNewLabel_2.setBounds(210, 48, 75, 14);
 		panel.add(lblNewLabel_2);
 
@@ -86,10 +86,10 @@ public class añadirPaciente extends JFrame {
 		lblNewLabel_3.setBounds(306, 48, 75, 14);
 		panel.add(lblNewLabel_3);
 
-		Enfermedad = new JTextField();
-		Enfermedad.setColumns(10);
-		Enfermedad.setBounds(210, 87, 86, 20);
-		panel.add(Enfermedad);
+		Especialidad = new JTextField();
+		Especialidad.setColumns(10);
+		Especialidad.setBounds(210, 87, 86, 20);
+		panel.add(Especialidad);
 
 		Fnacimiento = new JTextField();
 		Fnacimiento.addKeyListener(new KeyAdapter() {
@@ -115,11 +115,11 @@ public class añadirPaciente extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					Conexion.EjecutarUpdate(
-							"INSERT INTO `pacientes`(`IdPaciente`, `Nombre`, `Apellido`, `Enfermedad`, `fNacimiento`) VALUES("
+							"INSERT INTO `medicos`(`IdMedico`, `Nombre`, `Apellido`, `Especialidad`, `fNacimiento`) VALUES("
 									+ id.getText() + ",'" + Nombre.getText() + "','" + Apellido.getText() + "','"
-									+ Enfermedad.getText() + "'," + Fnacimiento.getText() + ")");
+									+ Especialidad.getText() + "'," + Fnacimiento.getText() + ")");
 					
-					menuPacientes q=new menuPacientes();
+					menuMedicos q=new menuMedicos();
 					dispose();
 					q.setVisible(true);
 				} catch (SQLException e) {
@@ -131,9 +131,9 @@ public class añadirPaciente extends JFrame {
 		btnAadir.setBounds(306, 191, 89, 23);
 		panel.add(btnAadir);
 
-		JLabel lblIdpaciente = new JLabel("IdPaciente");
-		lblIdpaciente.setBounds(10, 131, 86, 14);
-		panel.add(lblIdpaciente);
+		JLabel IdMedico = new JLabel("IdMedico");
+		IdMedico.setBounds(10, 131, 86, 14);
+		panel.add(IdMedico);
 
 		id = new JTextField();
 		id.addKeyListener(new KeyAdapter() {

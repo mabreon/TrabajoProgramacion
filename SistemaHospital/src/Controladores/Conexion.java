@@ -9,6 +9,7 @@ import com.mysql.jdbc.Statement;
 
 public class Conexion {
 	 private static Statement consulta;
+	private static java.sql.Statement consulta2;
 	
 	public static Connection conexion() throws SQLException {
 		
@@ -20,8 +21,8 @@ public class Conexion {
 	public static ResultSet ejecutarSentencia(String Sentencia) {
 		ResultSet resultado = null;
 		try {
-			java.sql.Statement consulta = null;
-			resultado = consulta.executeQuery(Sentencia);
+			consulta2 = null;
+			resultado = consulta2.executeQuery(Sentencia);
 		}catch (Exception e) {
 			
 		}
