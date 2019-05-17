@@ -17,6 +17,8 @@ import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class añadirPaciente extends JFrame {
 
@@ -148,5 +150,16 @@ public class añadirPaciente extends JFrame {
 		id.setColumns(10);
 		id.setBounds(10, 156, 86, 20);
 		panel.add(id);
+		
+		JButton button = new JButton("<");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuPacientes.main(null);
+				setVisible(false);
+			}
+		});
+		button.setBounds(10, 11, 41, 26);
+		panel.add(button);
 	}
 }

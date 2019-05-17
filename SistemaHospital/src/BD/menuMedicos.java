@@ -72,6 +72,14 @@ public class menuMedicos extends JFrame {
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				eliminMedico.main(null);
+				setVisible(false);
+				
+			}
+		});
 		btnNewButton_2.setBounds(135, 88, 89, 23);
 		panel.add(btnNewButton_2);
 		

@@ -17,6 +17,8 @@ import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class añadirMedico extends JFrame {
 
@@ -118,7 +120,7 @@ public class añadirMedico extends JFrame {
 							"INSERT INTO `medicos`(`IdMedico`, `Nombre`, `Apellido`, `Especialidad`, `fNacimiento`) VALUES("
 									+ id.getText() + ",'" + Nombre.getText() + "','" + Apellido.getText() + "','"
 									+ Especialidad.getText() + "'," + Fnacimiento.getText() + ")");
-					
+				
 					menuMedicos q=new menuMedicos();
 					dispose();
 					q.setVisible(true);
@@ -148,5 +150,16 @@ public class añadirMedico extends JFrame {
 		id.setColumns(10);
 		id.setBounds(10, 156, 86, 20);
 		panel.add(id);
+		
+		JButton btnNewButton = new JButton("<");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menuMedicos.main(null);
+				setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(10, 11, 41, 26);
+		panel.add(btnNewButton);
 	}
 }
